@@ -1,25 +1,35 @@
 ---
-import '../styles/global.css';
-// Component Imports
-import Button from '../components/Button.astro';
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import "../styles/global.css";
+import Hero from "@/components/Hero.tsx";
+import WhyUs from "@/components/WhyUs";
+import OurProcess from "@/components/OurProcess";
+import WhatWeOffer from "@/components/WhatWeOffer";
+import Examples from "@/components/Examples";
+import Testimonials from "@/components/Testimonials";
+import GridBackground from "@/components/GridBackground";
+import Contact from "@/components/Contact";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>RealCode | Custom Website Development</title>
+  </head>
 
-	<body>
-		<div class="grid place-items-center h-screen content-center">
-			<Button>Tailwind Button in Astro!</Button>
-			<a href="/markdown-page" class="p-4 underline">Markdown is also supported...</a>
-		</div>
-	</body>
+  <body class="relative bg-background text-foreground">
+    <!-- <GridBackground client:load /> -->
+
+    <div class="relative z-10">
+      <Hero client:load />
+      <WhyUs client:load />
+      <WhatWeOffer client:load />
+      <OurProcess client:load />
+      <Examples client:load />
+      <Testimonials client:load />
+      <Contact client:load />
+    </div>
+  </body>
 </html>
